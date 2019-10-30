@@ -12,7 +12,7 @@ export default class App extends Component {
     person: {}
   }
 
-  componentDidMount(){
+  fetchPeople = () => {
     fetch('http://localhost:3000/people')
     .then(res => res.json())
     .then(peopleObject => {
@@ -22,10 +22,28 @@ export default class App extends Component {
     })
   }
 
+  componentDidMount(){
+   this.fetchPeople()
+  }
+
   handleClick = (person) => {
     // console.log('Clicked', person)
     this.setState({
       person: person
+    })
+  }
+
+  handleDelete = (id) => {
+    console.log("Delete button clicked", id)
+    fetch(`http://localhost:3000/people/${id}`,{
+      method: 'DELETE'
+    })
+    .then(res => {
+      const newPeople = this.state.people.filter( person => person.id !== id)
+      this.setState({
+        people: newPeople,
+        person: {}
+      })
     })
   }
 
@@ -35,7 +53,7 @@ export default class App extends Component {
     return <Fragment>
       <TopBar person={this.state.person}/>
       <SideBar people={this.state.people} handleClick={this.handleClick}/>
-      <ShowPanel person={this.state.person} />
+      <ShowPanel person={this.state.person} handleDelete={this.handleDelete} />
     </Fragment>;
   }
 }
