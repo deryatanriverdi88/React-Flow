@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  font-family: "Roboto", sans-serif;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 35% 65%;
+  height: 100vh;
+}
+
+// TOP BAR
+
+.top-bar {
+  grid-column: span 2;
+  border-bottom: 2px solid #262626;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.top-bar form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 40%;
+}
+
+.top-bar input[type="text"] {
+  border-radius: 20px;
+  padding: 1vw;
+  border: 1px solid #262626;
+  margin: 10px;
+}
+
+.top-bar input[type="submit"] {
+  background-color: #262626;
+  color: white;
+  width: 20%;
+  padding: 1vw;
+  border-radius: 20px;
+  border: 0;
+  transition: 0.8s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.top-bar input[type="text"]:focus,
+.top-bar input[type="submit"]:focus {
+  outline: 0;
+}
+
+.top-bar-title {
+  background-color: #262626;
+  color: white;
+  padding: 2vw;
+}
+
+// SIDEBAR
+
+.sidebar-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  overflow: scroll;
+}
+
+.sidebar-li {
+  text-align: center;
+  padding: 2vw 0;
+  max-width: 100%;
+  transition: 0.5s;
+  border-radius: 50px 0 0 50px;
+  border-bottom: 1px solid #262626;
+  cursor: pointer;
+  &:hover {
+    background-color: #262626;
+    color: white;
+  }
+}
+
+// SHOW PANEL
+
+#show-panel {
+  background-color: #262626;
+  color: white;
+  padding: 5vw;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+}
+
+.show-image {
+  height: 20%;
+
+  border-radius: 20px;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  padding: 1vw;
+  border-radius: 20px;
+  margin: 1vw;
+  border: 0;
+  transition: 0.5s;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+}
