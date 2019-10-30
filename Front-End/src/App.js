@@ -33,7 +33,7 @@ export default class App extends Component {
     
     // console.log(this.state.people)
     return <Fragment>
-      <TopBar />
+      <TopBar person={this.state.person}/>
       <SideBar people={this.state.people} handleClick={this.handleClick}/>
       <ShowPanel person={this.state.person} />
     </Fragment>;

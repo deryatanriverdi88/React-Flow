@@ -7,7 +7,7 @@ const ShowPanel = (props) => {
   return (
     <div id="show-panel" >
       <button className="delete-button"> Delete </button>
-      <img className="show-image" src="" alt="" />
+      <img className="show-image" src={props.person.img_url} alt="" />
       <h1> {props.person.name}</h1>
       <span>{props.person.bio}</span>
     </div>
