@@ -5,7 +5,7 @@ const Sidebar = (props) => {
   // debugger
   return <ul className="sidebar-ul">
     {props.people.map((person => {
-        return <li key={person.id}> {person.name} </li>
+        return <li onClick={() => props.handleClick(person)} className="sidebar-li" key={person.id}> {person.name} </li>
       }))}
   </ul>;
 };

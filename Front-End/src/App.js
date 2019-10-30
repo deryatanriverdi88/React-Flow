@@ -22,8 +22,11 @@ export default class App extends Component {
     })
   }
 
-  handleClick = () => {
-    console.log('Clicked')
+  handleClick = (person) => {
+    // console.log('Clicked', person)
+    this.setState({
+      person: person
+    })
   }
 
   render() {
@@ -32,7 +35,7 @@ export default class App extends Component {
     return <Fragment>
       <TopBar />
       <SideBar people={this.state.people} handleClick={this.handleClick}/>
-      <ShowPanel />
+      <ShowPanel person={this.state.person} />
     </Fragment>;
   }
 }
