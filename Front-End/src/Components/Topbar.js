@@ -7,11 +7,11 @@ export default class Topbar extends Component {
       <div className="top-bar">
         <h1 className="top-bar-title">{this.props.person.name}</h1>
         <h2>Add someone that inspires you!</h2>
-        <form>
-          <input name="name" type="text" placeholder="Name" />
-          <input name="bio" type="text" placeholder="Bio" />
-          <input name="img_url" type="text" placeholder="Img Url" />
-          <input type="submit" />
+        <form onChange={(event) => this.props.handleChange(event)} >
+          <input name="name" type="text" placeholder="Name"  value={this.props.name}/>
+          <input name="bio" type="text" placeholder="Bio" value={this.props.bio} />
+          <input name="img" type="text" placeholder="Img Url" value={this.props.img}/>
+          <input type="submit" onClick={(e) => this.props.handleSubmit(e)} />
         </form>
       </div>
     );
