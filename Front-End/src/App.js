@@ -32,7 +32,10 @@ export default class App extends Component {
   handleClick = (person) => {
     // console.log('Clicked', person)
     this.setState({
-      person: person
+      person: person,
+      name: person.name,
+      bio: person.bio,
+      img: person.img_url
     })
   }
 
@@ -84,13 +87,14 @@ export default class App extends Component {
         name: '',
         bio: '',
         img: ''
+        // person: {}
       })
     )
   }
 
   render() {
     
-    console.log(this.state.name)
+    // console.log(this.state.name)
     // console.log(this.state.people)
     return <Fragment>
       <TopBar
